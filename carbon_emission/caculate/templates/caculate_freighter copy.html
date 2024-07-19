@@ -1,0 +1,65 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <style>
+            @font-face {
+                font-family: handwritten;
+                src: url('{% static "newfont.ttf"%}')
+            }
+            .back{
+                background-image: url('{% static "background.jpg"%}');
+                background-size: cover;
+                color:rgb(240, 245, 245);
+                font-family: handwritten;
+            }
+            input, form{
+               color: white;
+               border: none;
+               font-family: handwritten;
+               font-size: 2vw;
+               outline: none;
+               background-color: transparent;
+            }
+            input {
+               border-bottom: solid rgb(248, 244, 244) 2px;
+            }
+            .content{
+               width:50%;
+               position: absolute;
+               top: 15vh;
+               left: 20vw;
+               font-size: 150%;
+            }
+            .button{
+               color: gold;
+            }
+            #keyin{
+               border-bottom: 2px solid white;
+             }
+        </style><!--以上是CSS的設定-->
+        <html>
+            <body class="back"> 
+                <form action="/test/"  class='content'> 
+                    <table>
+                        <tr>
+                            <td> <p>船隻編號: {{ship_id}}</p> </td>
+                        </tr>
+                        <tr>
+                            <td> <p>航線公里數: {{ship_distance}} 公里</p></td>
+                        </tr>
+                        <tr>
+                            <td> <p>TEUs 數量: {{teu}} teus</p> </td>
+                        </tr>
+                        <tr>
+                            <td> <p>碳排放: {{result}} 公斤</p></td>
+                        </tr>
+                    </table>    
+                    <div class="row justify-content-center mt-5">
+                        <button type="submit" class="btn btn-csr" id="back" name="back">返回</button>
+                    </div>
+                    
+                </form>
+            </body>
+        </html>
+        

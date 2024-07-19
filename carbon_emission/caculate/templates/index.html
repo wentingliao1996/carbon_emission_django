@@ -1,0 +1,63 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <style>
+            @font-face {
+                font-family: handwritten;
+                src: url('{% static "newfont.ttf"%}')
+            }
+            .back{
+                background-image: url('{% static "background.jpg"%}');
+                background-size: cover;
+                color:rgb(240, 245, 245);
+                font-family: handwritten;
+            }
+            input, form{
+               color: white;
+               border: none;
+               font-family: handwritten;
+               font-size: 2vw;
+               outline: none;
+               background-color: transparent;
+            }
+            input {
+               border-bottom: solid rgb(248, 244, 244) px;
+            }
+            .content{
+               width:50%;
+               position: absolute;
+               top: 30vh;
+               left: 30vw;
+               font-size: 200%;
+            }
+            .content01{
+               width:50%;
+               position: absolute;
+               top: 10vh;
+               left: 30vw;
+               font-size: 200%;
+            }
+            /* .button{
+               color: gold;
+               
+            } */
+            .button{background-color: #e7e7e7; color: black;} /* 灰色 */
+            #keyin{
+               border-bottom: 2px solid white;
+             }
+        </style><!--以上是CSS的設定-->
+
+        </head>
+            <body class="back">
+                <div class='content01'>
+                    <p>Date: {{date}}</p>
+                </div>
+                <form action="test/" method="get" class='content' autocomplete="off">
+                    <div class="row justify-content-center mt-5">
+                        <button type="submit" class="btn btn-csr" id="csr_btn_submit" name="csr_btn_submit">遠洋船隻碳排放計算</button>
+                    </div>
+                </form>
+            </body>
+        </html>
+    

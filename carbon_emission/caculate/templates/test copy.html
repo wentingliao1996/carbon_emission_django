@@ -1,0 +1,74 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <style>
+            @font-face {
+                font-family: handwritten;
+                src: url('{% static "newfont.ttf"%}')
+            }
+            .back{
+                background-image: url('{% static "background.jpg"%}');
+                background-size: cover;
+                color:rgb(240, 245, 245);
+                font-family: handwritten;
+            }
+            input, form{
+               color: white;
+               border: none;
+               font-family: handwritten;
+               font-size: 2vw;
+               outline: none;
+               background-color: transparent;
+            }
+            input {
+               border-bottom: solid rgb(248, 244, 244) 2px;
+            }
+            .content{
+               width:50%;
+               position: absolute;
+               top: 20vh;
+               left: 15vw;
+               font-size: 150%;
+            }
+            .button{
+               color: gold;
+            }
+            #keyin{
+               border-bottom: 2px solid white;
+             }
+        </style><!--以上是CSS的設定-->
+        </head>
+            <body class="back">
+                <form action="caculate_freighter/" method="post" class='content' autocomplete="off">
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h5 class="small-title-bold-bar">遠洋船隻碳排放計算</h5>
+                        </div>
+                    </div>
+                                       
+                    <div class="row mt-5">
+                        {%csrf_token%}
+                        <div class="col-12">
+                            <td> <label for="visitor">船隻編號 </label> </td>
+        </style><!--以上是CSS的設定-->
+                            <td></td><input type="text" id="id" name="id" class="form-control" placeholder="請輸入船隻編號"  maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required /></td>
+                            
+                        </div>
+                        <div class="col-12">
+                            <td> <label for="visitor">航線公里數 </label> </td>
+                            <td></td><input type="number" id="distance" name="distance" class="form-control" placeholder="請輸入航線公里數"  maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required /></td>
+                            <td> <label for="visitor">km </label> </td>
+                        </div>
+                        <div class="col-12">
+                            <td> <label for="visitor">TEUs 數量 </label> </td>
+                            <td></td><input type="number" id="weight" name="weight" class="form-control" placeholder="請輸入單位數值"  maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required /></td>
+                            <td> <label for="visitor">teus </label> </td>
+                        </div>
+                    </div>                    
+                    <div class="row justify-content-center mt-5">
+                        <button type="submit" class="btn btn-csr" id="csr_btn_submit" name="csr_btn_submit">計算</button>
+                    </div>
+                </form>
+            </body>
+</html>
