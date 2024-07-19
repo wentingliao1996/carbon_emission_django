@@ -1,7 +1,5 @@
 # carbon_emission_django
 
-建立一個建議的計算機
-
 ## 1.前端網頁
 carbon_emission/caculate/template/*html
 
